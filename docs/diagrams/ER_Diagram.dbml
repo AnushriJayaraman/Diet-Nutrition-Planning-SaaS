@@ -1,0 +1,46 @@
+Table Clinic {
+  clinic_id int [pk, increment]
+  clinic_name varchar
+  address varchar
+  phone varchar
+  email varchar
+}
+
+Table Patient {
+  patient_id int [pk, increment]
+  clinic_id int [ref: > Clinic.clinic_id]
+  name varchar
+  email varchar
+  phone varchar
+  date_of_birth date
+  gender varchar
+}
+
+Table Nutritionist {
+  nutritionist_id int [pk, increment]
+  clinic_id int [ref: > Clinic.clinic_id]
+  name varchar
+  email varchar
+  phone varchar
+  specialization varchar
+}
+
+Table DietPlan {
+  diet_plan_id int [pk, increment]
+  patient_id int [ref: > Patient.patient_id]
+  nutritionist_id int [ref: > Nutritionist.nutritionist_id]
+  plan_name varchar
+  start_date date
+  end_date date
+  calories_per_day int
+  status varchar
+}
+
+Table Meal {
+  meal_id int [pk, increment]
+  diet_plan_id int [ref: > DietPlan.diet_plan_id]
+  meal_type varchar
+  meal_name varchar
+  calories int
+  meal_time time
+}

@@ -1,0 +1,34 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="8dJyqGKd-8nbmtsgPV0H">
+    <mxGraphModel dx="2700" dy="1116" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8UOcs_Lsz2m5pWZyMeDL-6" edge="1" parent="1" source="8UOcs_Lsz2m5pWZyMeDL-1" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" target="8UOcs_Lsz2m5pWZyMeDL-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8UOcs_Lsz2m5pWZyMeDL-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="USER&lt;div&gt;(Browser)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="-60" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="8UOcs_Lsz2m5pWZyMeDL-7" edge="1" parent="1" source="8UOcs_Lsz2m5pWZyMeDL-2" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" target="8UOcs_Lsz2m5pWZyMeDL-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8UOcs_Lsz2m5pWZyMeDL-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="React.js&lt;div&gt;Frontend&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="-60" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="8UOcs_Lsz2m5pWZyMeDL-8" edge="1" parent="1" source="8UOcs_Lsz2m5pWZyMeDL-4" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" target="8UOcs_Lsz2m5pWZyMeDL-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8UOcs_Lsz2m5pWZyMeDL-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Spring Boot&amp;nbsp;&lt;div&gt;REST API&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="-60" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="8UOcs_Lsz2m5pWZyMeDL-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="My SQL&lt;div&gt;Database&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="-60" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="8UOcs_Lsz2m5pWZyMeDL-10" edge="1" parent="1" source="8UOcs_Lsz2m5pWZyMeDL-5" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;innerLoopWaypoints=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" target="8UOcs_Lsz2m5pWZyMeDL-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
