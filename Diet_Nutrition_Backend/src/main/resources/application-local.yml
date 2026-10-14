@@ -1,0 +1,3 @@
+app:
+  auth:
+    max-admin-accounts: 2
