@@ -1,0 +1,156 @@
+.diet-plan-page {
+  min-height: calc(100vh - 76px);
+  background: linear-gradient(135deg, #eef8ee, #f8fbf6);
+  padding: 40px;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+.diet-plan-header {
+  max-width: 1000px;
+  margin: 0 auto 25px;
+}
+
+.diet-plan-header span {
+  color: #4b8f52;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.diet-plan-header h1 {
+  color: #245c28;
+  margin: 8px 0;
+  font-size: 32px;
+}
+
+.diet-plan-header p {
+  color: #687268;
+  margin: 0;
+}
+
+.diet-plan-card {
+  max-width: 750px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #e1eee1;
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.08);
+}
+
+.diet-plan-card h2 {
+  color: #2e7d32;
+  margin-top: 0;
+}
+
+.diet-plan-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.diet-plan-card label {
+  color: #374137;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.diet-plan-card input,
+.diet-plan-card select,
+.diet-plan-card textarea {
+  width: 100%;
+  margin-top: 7px;
+  padding: 12px;
+  border: 1px solid #ccd9cc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+  font-family: var(--font-family);
+  background: white;
+}
+
+.diet-plan-card textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.diet-plan-meal-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 14px;
+  padding: 12px;
+  border: 1px solid #e5eee5;
+  border-radius: 8px;
+  background: #f8fbf8;
+}
+
+.diet-plan-meal-fields label {
+  margin-top: 4px;
+}
+
+.diet-plan-card input:focus,
+.diet-plan-card select:focus,
+.diet-plan-card textarea:focus {
+  border-color: #4caf50;
+}
+
+.diet-plan-card button {
+  margin-top: 22px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.diet-plan-card button:hover {
+  background: #388e3c;
+}
+
+.diet-plan-message {
+  color: #2e7d32;
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+.diet-plan-cancel {
+  margin-top: 10px !important;
+  border: 1px solid #cfe3cf !important;
+  background: #f1f8e9 !important;
+  color: #245c28 !important;
+}
+
+.diet-plan-edit-list {
+  margin-top: 20px;
+}
+
+.diet-plan-edit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid #edf3ed;
+}
+
+.diet-plan-edit-row button {
+  flex: 0 0 auto;
+  margin: 0 !important;
+  padding: 9px 12px !important;
+}
+
+@media (max-width: 700px) {
+  .diet-plan-page {
+    padding: 20px;
+  }
+
+  .diet-plan-edit-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

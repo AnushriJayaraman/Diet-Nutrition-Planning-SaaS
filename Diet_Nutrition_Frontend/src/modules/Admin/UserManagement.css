@@ -1,0 +1,149 @@
+.user-management-page {
+  min-height: calc(100vh - 76px);
+  background: linear-gradient(135deg, #eef8ee, #f8fbf6);
+  padding: 40px;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+.user-management-header {
+  max-width: 1000px;
+  margin: 0 auto 25px;
+}
+
+.user-management-header span {
+  color: #4b8f52;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.user-management-header h1 {
+  color: #245c28;
+  margin: 8px 0;
+  font-size: 32px;
+}
+
+.user-management-header p {
+  color: #687268;
+  margin: 0;
+}
+
+.user-management-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #e1eee1;
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.08);
+}
+
+.user-management-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+  margin-bottom: 22px;
+}
+
+.user-management-card h2 {
+  color: #2e7d32;
+  margin-top: 0;
+}
+
+.user-management-card form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+}
+
+.user-management-card label {
+  color: #374137;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.user-management-card input,
+.user-management-card select {
+  width: 100%;
+  margin-top: 7px;
+  padding: 12px;
+  border: 1px solid #ccd9cc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+  background: white;
+}
+
+.user-management-card input:focus,
+.user-management-card select:focus {
+  border-color: #4caf50;
+}
+
+.user-management-card button {
+  grid-column: 1 / -1;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.user-management-card button:hover {
+  background: #388e3c;
+}
+
+.user-management-message {
+  max-width: 1000px;
+  margin: 18px auto;
+  color: #2e7d32;
+  font-size: 14px;
+}
+
+.user-management-card button {
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 7px;
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.account-details dl {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 10px 16px;
+}
+
+.account-details dt {
+  color: #687268;
+  font-weight: bold;
+}
+
+.account-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+  .user-management-page {
+    padding: 20px;
+  }
+
+  .user-management-card form {
+    grid-template-columns: 1fr;
+  }
+
+  .user-management-card button {
+    grid-column: auto;
+  }
+
+  .user-management-filters {
+    grid-template-columns: 1fr;
+  }
+}

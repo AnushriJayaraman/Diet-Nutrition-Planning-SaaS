@@ -1,0 +1,51 @@
+.nutritionist-page {
+  min-height: calc(100vh - 76px);
+  background: linear-gradient(135deg, #eef8ee, #f8fbf6);
+  padding: 40px;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+.nutritionist-header {
+  max-width: 1000px;
+  margin: 0 auto 25px;
+}
+
+.nutritionist-header span {
+  color: #4b8f52;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.nutritionist-header h1 {
+  color: #245c28;
+  margin: 8px 0;
+  font-size: 32px;
+}
+
+.nutritionist-header p {
+  color: #687268;
+  margin: 0;
+}
+
+.nutritionist-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #e1eee1;
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.08);
+}
+
+.nutritionist-card h2 {
+  color: #2e7d32;
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  .nutritionist-page {
+    padding: 20px;
+  }
+}

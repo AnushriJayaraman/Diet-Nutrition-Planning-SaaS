@@ -1,0 +1,98 @@
+.meal-entry-section {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.meal-entry-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.meal-entry-heading h3 {
+  margin: 0 0 4px;
+  color: #2e7d32;
+}
+
+.meal-entry-heading p,
+.meal-entry-note {
+  margin: 0;
+  color: #687268;
+  font-size: 12px;
+}
+
+.meal-entry-heading button,
+.meal-entry-remove {
+  padding: 9px 12px;
+  border: 1px solid #cfe3cf;
+  border-radius: 7px;
+  background: #f1f8e9;
+  color: #245c28;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.meal-entry-card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  min-width: 0;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #dcebdc;
+  border-radius: 10px;
+}
+
+.meal-entry-card legend {
+  padding: 0 6px;
+  color: #2e7d32;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.meal-entry-card label {
+  display: grid;
+  gap: 5px;
+  color: #374137;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.meal-entry-card input,
+.meal-entry-card select {
+  width: 100%;
+  min-height: 38px;
+  padding: 8px;
+  border: 1px solid #ccd9cc;
+  border-radius: 7px;
+  box-sizing: border-box;
+  background: white;
+  color: #273327;
+}
+
+.meal-entry-card .meal-entry-remove {
+  justify-self: start;
+}
+
+.meal-entry-totals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f1f8e9;
+  color: #245c28;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .meal-entry-card {
+    grid-template-columns: 1fr;
+  }
+
+  .meal-entry-heading {
+    align-items: flex-start;
+  }
+}

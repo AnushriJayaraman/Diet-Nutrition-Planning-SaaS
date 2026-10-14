@@ -1,0 +1,116 @@
+.patient-tracking-page {
+  min-height: calc(100vh - 76px);
+  background: linear-gradient(135deg, #eef8ee, #f8fbf6);
+  padding: 40px;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+.patient-tracking-header {
+  max-width: 1000px;
+  margin: 0 auto 25px;
+}
+
+.patient-tracking-header span {
+  color: #4b8f52;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.patient-tracking-header h1 {
+  color: #245c28;
+  margin: 8px 0;
+  font-size: 32px;
+}
+
+.patient-tracking-header p {
+  color: #687268;
+  margin: 0;
+}
+
+.patient-tracking-card {
+  max-width: 750px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #e1eee1;
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.08);
+}
+
+.patient-tracking-card h2 {
+  color: #2e7d32;
+  margin-top: 0;
+}
+
+.patient-tracking-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-tracking-card label {
+  color: #374137;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.patient-tracking-card input,
+.patient-tracking-card textarea {
+  width: 100%;
+  margin-top: 7px;
+  padding: 12px;
+  border: 1px solid #ccd9cc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+  font-family: var(--font-family);
+}
+
+.patient-tracking-card textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.patient-tracking-card input:focus,
+.patient-tracking-card textarea:focus {
+  border-color: #4caf50;
+}
+
+.patient-tracking-card button {
+  margin-top: 22px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.patient-tracking-card button:hover {
+  background: #388e3c;
+}
+
+.patient-tracking-message {
+  color: #2e7d32;
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+@media (max-width: 700px) {
+  .patient-tracking-page {
+    padding: 20px;
+  }
+
+  .patient-tracking-header h1 {
+    font-size: 26px;
+  }
+
+  .patient-tracking-card {
+    padding: 22px;
+  }
+}

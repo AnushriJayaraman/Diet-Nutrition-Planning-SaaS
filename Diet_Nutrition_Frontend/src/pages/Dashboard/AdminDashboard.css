@@ -1,0 +1,139 @@
+.admin-dashboard {
+  min-height: calc(100vh - 76px);
+  background: linear-gradient(135deg, #eef8ee, #f8fbf6);
+  padding: 40px;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+.admin-header {
+  max-width: 1000px;
+  margin: 0 auto 30px;
+}
+
+.admin-header span {
+  color: #4b8f52;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.admin-header h1 {
+  color: #245c28;
+  margin: 8px 0;
+  font-size: 32px;
+}
+
+.admin-header p {
+  color: #687268;
+  margin: 0;
+}
+
+.admin-modules {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.admin-dashboard-stats {
+  max-width: 1000px;
+  margin: 0 auto 24px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.admin-dashboard-stats div {
+  display: grid;
+  gap: 5px;
+  padding: 14px;
+  border: 1px solid #e1eee1;
+  border-radius: 12px;
+  background: white;
+}
+
+.admin-dashboard-stats strong {
+  color: #2e7d32;
+  font-size: 22px;
+}
+
+.admin-dashboard-stats span,
+.admin-dashboard-error {
+  color: #687268;
+  font-size: 13px;
+}
+
+.admin-dashboard-error {
+  max-width: 1000px;
+  margin: 0 auto 12px;
+  color: #a05239;
+}
+
+.admin-module-card {
+  background: white;
+  border: 1px solid #e1eee1;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.08);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin-module-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(46, 125, 50, 0.14);
+}
+
+.admin-module-icon {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.admin-module-card h2 {
+  color: #2e7d32;
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.admin-module-card p {
+  color: #687268;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 42px;
+}
+
+.admin-module-card button {
+  margin-top: 12px;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.admin-module-card button:hover {
+  background: #388e3c;
+}
+
+@media (max-width: 700px) {
+  .admin-dashboard {
+    padding: 20px;
+  }
+
+  .admin-modules {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.overview-module-card {
+  border-color: #c6e5cf;
+  background: #fbfffa;
+}

@@ -1,0 +1,74 @@
+.nutritionist-profile-page {
+  min-height: calc(100vh - 76px);
+  padding: 40px 22px;
+  background: linear-gradient(135deg, #eef8ee, #f8fbf6);
+  color: #374137;
+  font-family: var(--font-family);
+}
+
+.nutritionist-profile-page > header,
+.nutritionist-profile-card {
+  max-width: 760px;
+  margin: 0 auto 22px;
+}
+
+.nutritionist-profile-page > header span {
+  color: #4b8f52;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.nutritionist-profile-page h1,
+.nutritionist-profile-card h2 {
+  color: #245c28;
+}
+
+.nutritionist-profile-page > header p {
+  color: #687268;
+}
+
+.nutritionist-profile-card {
+  padding: 28px;
+  border: 1px solid #e1eee1;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.08);
+}
+
+.nutritionist-profile-card form {
+  display: grid;
+  gap: 9px;
+}
+
+.nutritionist-profile-card label {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.nutritionist-profile-card input,
+.nutritionist-profile-card textarea {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #ccd9cc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+.nutritionist-profile-card button {
+  margin-top: 14px;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #4caf50;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .nutritionist-profile-page { padding: 24px 15px; }
+  .nutritionist-profile-card { padding: 20px; }
+}

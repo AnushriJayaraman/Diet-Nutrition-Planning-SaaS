@@ -1,0 +1,153 @@
+.patient-diet-page {
+  min-height: calc(100vh - 76px);
+  padding: 40px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #eef8ee, #f8fbf6);
+  color: #294536;
+  font-family: var(--font-family);
+}
+
+.patient-diet-header,
+.patient-diet-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.patient-diet-header { margin-bottom: 25px; }
+.patient-diet-header span,
+.patient-diet-card-top span {
+  color: #4b8f52;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.patient-diet-header h1 {
+  margin: 8px 0;
+  color: #245c28;
+  font-size: 32px;
+}
+
+.patient-diet-header p,
+.patient-diet-empty p,
+.patient-diet-plan p,
+.patient-diet-notes p { color: #687268; }
+
+.patient-diet-card,
+.patient-diet-empty {
+  margin-bottom: 18px;
+  padding: 26px;
+  border: 1px solid #e1eee1;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.08);
+}
+
+.patient-diet-card-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #edf3ed;
+}
+
+.patient-diet-card-top h2,
+.patient-diet-empty h2 {
+  margin: 7px 0 0;
+  color: #2e7d32;
+}
+
+.patient-diet-card-top strong {
+  padding: 8px 11px;
+  border-radius: 7px;
+  background: #eef8ee;
+  color: #2e7d32;
+  font-size: 12px;
+}
+
+.patient-diet-meta {
+  display: grid;
+  justify-items: end;
+  gap: 7px;
+  color: #687268;
+  font-size: 12px;
+}
+
+.patient-diet-calorie-target {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f1f8e9;
+  color: #245c28;
+}
+
+.patient-diet-meals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.patient-diet-meals section {
+  padding: 13px;
+  border: 1px solid #e1eee1;
+  border-radius: 10px;
+}
+
+.patient-diet-meals h3 {
+  margin: 0 0 7px;
+  color: #2e7d32;
+}
+
+.patient-diet-meals p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.patient-diet-plan,
+.patient-diet-notes { margin-top: 19px; }
+.patient-diet-plan h3,
+.patient-diet-notes h3 {
+  margin: 0 0 7px;
+  color: #374137;
+  font-size: 14px;
+}
+
+.patient-diet-plan p,
+.patient-diet-notes p {
+  margin: 0;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.patient-diet-notes {
+  padding: 13px;
+  border-left: 3px solid #f0c865;
+  background: #fffaf0;
+}
+
+.patient-diet-empty { text-align: center; }
+.patient-diet-mark {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 14px;
+  place-items: center;
+  border-radius: 50%;
+  background: #dff2e1;
+  color: #2e7d32;
+  font-size: 26px;
+}
+
+.patient-diet-message { color: #a05239; }
+
+@media (max-width: 700px) {
+  .patient-diet-page { padding: 20px; }
+  .patient-diet-header h1 { font-size: 26px; }
+  .patient-diet-card,
+  .patient-diet-empty { padding: 20px; }
+  .patient-diet-card-top { flex-direction: column; }
+  .patient-diet-meta { justify-items: start; }
+  .patient-diet-meals { grid-template-columns: 1fr; }
+}

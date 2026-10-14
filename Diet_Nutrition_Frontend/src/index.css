@@ -1,0 +1,442 @@
+:root {
+  --page-bg: #f5fbf7;
+  --surface: #ffffff;
+  --text: #18382a;
+  --text-muted: #64776b;
+  --heading: #163d2b;
+  --brand: #168447;
+  --brand-strong: #145c3b;
+  --brand-hover: #126f3e;
+  --brand-soft: #dcf7e7;
+  --brand-teal: #0f766e;
+  --brand-mint: #d9f5ef;
+  --border: #e1eee1;
+  --shadow-card: 0 16px 38px rgba(31, 87, 54, 0.09);
+  --font-family: "DM Sans", "Poppins", Arial, sans-serif;
+  --font-heading: "Manrope", "Poppins", Arial, sans-serif;
+
+  color: var(--text);
+  background: var(--page-bg);
+  font-family: var(--font-family);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 8% 8%, rgba(134, 239, 172, 0.13), transparent 28rem),
+    radial-gradient(ellipse at 96% 30%, rgba(45, 212, 191, 0.09), transparent 30rem),
+    var(--page-bg);
+  color: var(--text);
+  font-family: var(--font-family);
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading);
+  font-family: var(--font-heading);
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.035em;
+}
+
+button,
+input,
+select,
+textarea,
+table {
+  font-family: var(--font-family);
+}
+
+a {
+  color: var(--brand-strong);
+}
+
+button,
+input,
+select,
+textarea {
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+input,
+select,
+textarea {
+  border-color: #cfe2d5;
+  border-radius: 12px;
+  color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #159957;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(21, 153, 87, 0.11);
+}
+
+button[type="submit"],
+.admin-module-card button,
+.overview-module-card button,
+.nutritionist-module-card button,
+.insights-module-card button,
+.patient-module-card button,
+.navbar-signup {
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #168447, #22a661);
+  color: #fff;
+  font-family: var(--font-family);
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(22, 132, 71, 0.2);
+}
+
+button[type="submit"]:hover:not(:disabled),
+.admin-module-card button:hover,
+.overview-module-card button:hover,
+.nutritionist-module-card button:hover,
+.insights-module-card button:hover,
+.patient-module-card button:hover,
+.navbar-signup:hover {
+  background: linear-gradient(135deg, #126f3e, #168e55);
+  box-shadow: 0 13px 26px rgba(22, 132, 71, 0.27);
+  transform: translateY(-1px);
+}
+
+:is(
+  .admin-dashboard,
+  .nutritionist-dashboard,
+  .patient-dashboard,
+  .admin-overview-page,
+  .admin-settings-page,
+  .reports-page,
+  .user-management-page,
+  .nutritionist-page,
+  .patient-management-page,
+  .appointments-page,
+  .bmi-page,
+  .diet-plan-page,
+  .nutrition-progress-page,
+  .nutrition-tracking-page,
+  .nutritionist-profile-page,
+  .nutrition-patient-page,
+  .nutrition-insights-page,
+  .patient-diet-page,
+  .patient-bmi-page,
+  .patient-progress-page,
+  .patient-tracking-page,
+  .patient-profile-page,
+  .role-selection-page
+) {
+  background:
+    radial-gradient(ellipse at 8% 4%, rgba(134, 239, 172, 0.23), transparent 28rem),
+    radial-gradient(ellipse at 98% 22%, rgba(45, 212, 191, 0.14), transparent 30rem),
+    linear-gradient(135deg, #f2fbf5 0%, #f8fcf9 54%, #eef8f3 100%);
+  color: var(--text);
+  font-family: var(--font-family);
+}
+
+:is(
+  .admin-module-card,
+  .overview-module-card,
+  .patient-module-card,
+  .nutritionist-module-card,
+  .insights-module-card,
+  .admin-settings-card,
+  .reports-card,
+  .user-management-card,
+  .nutritionist-card,
+  .patient-management-card,
+  .nutritionist-profile-card,
+  .nutrition-patient-card,
+  .diet-plan-card,
+  .nutrition-progress-card,
+  .nutrition-tracking-card,
+  .bmi-card,
+  .patient-diet-card,
+  .patient-bmi-card,
+  .patient-progress-card,
+  .patient-tracking-card,
+  .patient-profile-card,
+  .appointments-card,
+  .role-selection-card,
+  .login-card,
+  .signup-card
+) {
+  border: 1px solid rgba(184, 218, 194, 0.8);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+:is(
+  .admin-header,
+  .nutritionist-header,
+  .patient-header,
+  .admin-overview-header,
+  .admin-settings-header,
+  .reports-header,
+  .user-management-header,
+  .nutritionist-page-header,
+  .patient-management-header,
+  .nutritionist-profile-header,
+  .nutrition-patient-header,
+  .diet-plan-header,
+  .nutrition-progress-header,
+  .nutrition-tracking-header,
+  .bmi-header,
+  .patient-diet-header,
+  .patient-bmi-header,
+  .patient-progress-header,
+  .patient-tracking-header,
+  .patient-profile-header,
+  .appointments-header,
+  .nutrition-insights-header
+) h1 {
+  color: var(--heading);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+:is(
+  .backend-records-table,
+  .nutrition-patient-table-wrap table,
+  .reports-table,
+  .appointments-table
+) th {
+  background: linear-gradient(135deg, #e8f7ed, #e5f5f2);
+  color: #145c3b;
+  font-weight: 700;
+}
+
+::selection {
+  background: #bdeed0;
+  color: #123b29;
+}
+
+@media (max-width: 1024px) {
+  #root :is(
+    .admin-dashboard,
+    .nutritionist-dashboard,
+    .patient-dashboard,
+    .admin-overview-page,
+    .admin-settings-page,
+    .reports-page,
+    .user-management-page,
+    .nutritionist-page,
+    .patient-management-page,
+    .appointments-page,
+    .bmi-page,
+    .diet-plan-page,
+    .nutrition-progress-page,
+    .nutrition-tracking-page,
+    .nutritionist-profile-page,
+    .nutrition-patient-page,
+    .nutrition-insights-page,
+    .patient-diet-page,
+    .patient-bmi-page,
+    .patient-progress-page,
+    .patient-tracking-page,
+    .patient-profile-page
+  ) {
+    padding: 32px 24px;
+  }
+
+  #root :is(.admin-dashboard-stats, .overview-metrics, .insights-metrics) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #root .nutritionist-snapshot {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  #root :is(
+    .admin-dashboard,
+    .nutritionist-dashboard,
+    .patient-dashboard,
+    .admin-overview-page,
+    .admin-settings-page,
+    .reports-page,
+    .user-management-page,
+    .nutritionist-page,
+    .patient-management-page,
+    .appointments-page,
+    .bmi-page,
+    .diet-plan-page,
+    .nutrition-progress-page,
+    .nutrition-tracking-page,
+    .nutritionist-profile-page,
+    .nutrition-patient-page,
+    .nutrition-insights-page,
+    .patient-diet-page,
+    .patient-bmi-page,
+    .patient-progress-page,
+    .patient-tracking-page,
+    .patient-profile-page
+  ) {
+    min-height: calc(100vh - 70px);
+    padding: 24px 16px;
+  }
+
+  #root :is(.admin-modules, .patient-modules, .nutritionist-modules, .insights-grid, .admin-settings-grid) {
+    grid-template-columns: 1fr;
+  }
+
+  #root :is(
+    .admin-dashboard-stats,
+    .patient-dashboard-snapshot,
+    .overview-metrics,
+    .insights-metrics,
+    .reports-grid,
+    .admin-patient-grid,
+    .user-management-grid
+  ) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #root :is(
+    .admin-module-card,
+    .overview-module-card,
+    .patient-module-card,
+    .nutritionist-module-card,
+    .insights-module-card,
+    .admin-settings-card,
+    .reports-card,
+    .user-management-card,
+    .nutritionist-card,
+    .patient-management-card,
+    .nutritionist-profile-card,
+    .nutrition-patient-card,
+    .diet-plan-card,
+    .nutrition-progress-card,
+    .nutrition-tracking-card,
+    .bmi-card,
+    .patient-diet-card,
+    .patient-bmi-card,
+    .patient-progress-card,
+    .patient-tracking-card,
+    .patient-profile-card,
+    .appointments-card
+  ) {
+    min-width: 0;
+    padding: 22px 18px;
+  }
+
+  #root :is(
+    .admin-header h1,
+    .nutritionist-header h1,
+    .patient-header h1,
+    .admin-overview-header h1,
+    .admin-settings-header h1,
+    .reports-header h1,
+    .user-management-header h1,
+    .nutritionist-header h1,
+    .nutrition-patient-header h1,
+    .diet-plan-header h1,
+    .nutrition-progress-header h1,
+    .nutrition-tracking-header h1,
+    .bmi-header h1,
+    .patient-diet-header h1,
+    .patient-bmi-header h1,
+    .patient-progress-header h1,
+    .patient-tracking-header h1,
+    .patient-profile-header h1,
+    .appointments-header h1,
+    .nutrition-insights-header h1
+  ) {
+    font-size: clamp(26px, 7vw, 34px);
+    line-height: 1.15;
+  }
+
+  #root :is(.availability-row, .diet-plan-meal-fields) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #root :is(.nutrition-patient-modal, .reports-modal) {
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(100dvh - 24px);
+    padding: 20px 16px;
+  }
+
+  #root :is(.backend-records-table-wrap, .nutrition-patient-table-wrap, .reports-table-wrap) {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #root :is(.backend-records-table, .nutrition-patient-table-wrap table, .reports-table-wrap table) {
+    min-width: 560px;
+  }
+
+  #root :is(.appointment-summary, .admin-overview-header) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  #root :is(.admin-dashboard-stats, .overview-metrics, .insights-metrics, .nutritionist-snapshot) {
+    grid-template-columns: 1fr;
+  }
+
+  #root :is(.admin-dashboard-stats div, .patient-dashboard-snapshot div) {
+    padding: 13px;
+  }
+
+  #root :is(.nutrition-patient-modal-backdrop, .reports-modal-backdrop) {
+    padding: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100%;
+  min-height: 82px;
+  padding: 12px 6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--border);
+
+  box-shadow: 0 8px 25px rgba(31, 87, 54, 0.07);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* LOGO */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  text-decoration: none;
+  min-width: 220px;
+}
+
+.logo-symbol {
+  width: 50px;
+  height: 50px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #dcf7e7, #d9f5ef);
+
+  box-shadow: 0 8px 20px rgba(21, 132, 71, 0.13);
+
+  font-size: 27px;
+}
+
+.logo-text h2 {
+  margin: 0;
+
+  color: var(--heading);
+
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.8px;
+}
+
+.logo-text span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #7a887f;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* NAVIGATION */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.nav-link {
+  min-height: 43px;
+  padding: 0 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border-radius: 12px;
+
+  color: #53685b;
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  transition: 0.25s ease;
+}
+
+.nav-link svg {
+  width: 19px;
+  height: 19px;
+
+  fill: none;
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition: 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--brand);
+  background: #effaf2;
+
+  transform: translateY(-2px);
+}
+
+.nav-link:hover svg {
+  transform: scale(1.08);
+}
+
+/* ACTION BUTTONS */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  min-width: 190px;
+  justify-content: flex-end;
+}
+
+.navbar-login,
+.navbar-signup {
+  min-height: 43px;
+  padding: 0 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  transition: 0.25s ease;
+}
+
+.navbar-login {
+  color: var(--brand-strong);
+
+  background: #effaf2;
+
+  border: 1px solid #cfe4d6;
+}
+
+.navbar-login:hover {
+  color: #fff;
+  background: var(--brand);
+
+  border-color: var(--brand);
+
+  transform: translateY(-2px);
+}
+
+.navbar-signup {
+  color: #fff;
+
+  background: linear-gradient(135deg, #168447, #22a661);
+
+  box-shadow: 0 9px 22px rgba(22, 132, 71, 0.22);
+}
+
+.navbar-signup:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 14px 28px rgba(22, 132, 71, 0.3);
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .navbar {
+    padding: 12px 4%;
+    gap: 12px;
+  }
+
+  .navbar-logo {
+    min-width: auto;
+  }
+
+  .navbar-links {
+    gap: 2px;
+  }
+
+  .nav-link {
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .navbar-actions {
+    min-width: auto;
+  }
+
+  .navbar-login,
+  .navbar-signup {
+    padding: 0 13px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .navbar {
+    padding: 12px 5%;
+
+    flex-wrap: wrap;
+  }
+
+  .navbar-logo {
+    flex: 1;
+  }
+
+  .navbar-actions {
+    min-width: auto;
+  }
+
+  .navbar-links {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: flex-start;
+
+    overflow-x: auto;
+
+    padding: 5px 0;
+
+    scrollbar-width: none;
+  }
+
+  .navbar-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-link {
+    flex-shrink: 0;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 500px) {
+  .logo-symbol {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 13px;
+
+    font-size: 23px;
+  }
+
+  .logo-text h2 {
+    font-size: 20px;
+  }
+
+  .logo-text span {
+    font-size: 7px;
+  }
+
+  .navbar-actions {
+    gap: 5px;
+  }
+
+  .navbar-login,
+  .navbar-signup {
+    min-height: 39px;
+
+    padding: 0 10px;
+
+    font-size: 11px;
+  }
+
+  .nav-link {
+    min-height: 40px;
+
+    padding: 0 10px;
+
+    font-size: 12px;
+  }
+
+  .nav-link svg {
+    width: 17px;
+    height: 17px;
+  }
+}

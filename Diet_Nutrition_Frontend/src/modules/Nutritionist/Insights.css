@@ -1,0 +1,170 @@
+.nutrition-insights-page {
+  min-height: calc(100vh - 76px);
+  padding: 42px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #f4fbf5 0%, #eef8f5 52%, #fffaf1 100%);
+  color: #20352c;
+  font-family: var(--font-family);
+}
+
+.nutrition-insights-header,
+.insights-metrics,
+.insights-grid,
+.recent-panel {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nutrition-insights-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+.nutrition-insights-header span,
+.panel-kicker {
+  color: #4f8f64;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.6px;
+}
+
+.nutrition-insights-header h1 {
+  margin: 8px 0;
+  color: #1f5b3c;
+  font-size: 38px;
+}
+
+.nutrition-insights-header p {
+  margin: 0;
+  color: #65736b;
+}
+
+.insights-refresh {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 17px;
+  background: #1f8066;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.insights-refresh:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.insights-message {
+  max-width: 1080px;
+  margin: 0 auto 18px;
+  padding: 13px 15px;
+  border: 1px solid #f1c9b9;
+  border-radius: 8px;
+  background: #fff6f1;
+  color: #a04b32;
+}
+
+.insights-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.insight-metric,
+.insights-panel {
+  border: 1px solid #dfece3;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 24px rgba(45, 101, 68, 0.07);
+}
+
+.insight-metric {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.insight-metric::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  content: "";
+}
+
+.metric-green::before { background: #52a66f; }
+.metric-teal::before { background: #2b9c9c; }
+.metric-yellow::before { background: #e2ad48; }
+.metric-coral::before { background: #df7964; }
+
+.insight-metric span,
+.insight-metric small {
+  display: block;
+  color: #718078;
+}
+
+.insight-metric span { font-size: 13px; }
+.insight-metric strong { display: block; margin: 10px 0 5px; color: #244c38; font-size: 28px; }
+.insight-metric small { font-size: 11px; }
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.insights-panel { padding: 24px; }
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.panel-heading h2 { margin: 6px 0 0; color: #254e39; font-size: 20px; }
+.panel-heading strong,
+.record-count { color: #6d7b73; font-size: 12px; font-weight: normal; }
+
+.status-list { display: grid; gap: 16px; }
+.status-label { display: flex; justify-content: space-between; margin-bottom: 7px; color: #53645b; font-size: 13px; }
+.status-label strong { color: #244c38; }
+.status-track { height: 8px; overflow: hidden; border-radius: 99px; background: #e7f0e9; }
+.status-track span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #52a66f, #2b9c9c); }
+.attention-note { margin-top: 20px; padding: 11px 13px; border-radius: 8px; background: #fff4df; color: #91682a; font-size: 13px; }
+
+.library-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.library-items div { padding: 14px 10px; border-radius: 8px; background: #f3f8f3; text-align: center; }
+.library-items strong { display: block; color: #247154; font-size: 24px; }
+.library-items span { display: block; margin-top: 5px; color: #718078; font-size: 11px; }
+.library-caption { margin: 20px 0 0; color: #718078; font-size: 13px; line-height: 1.5; }
+
+.recent-panel { margin-bottom: 30px; }
+.record-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.record-item { display: flex; align-items: center; gap: 12px; padding: 13px; border: 1px solid #e5eee7; border-radius: 9px; }
+.record-avatar { display: grid; flex: 0 0 36px; height: 36px; place-items: center; border-radius: 50%; background: #d9eee0; color: #267050; font-weight: bold; }
+.record-item strong { color: #294937; font-size: 14px; }
+.record-item p { margin: 5px 0 0; color: #66766d; font-size: 12px; }
+.record-item p span { color: #b5c4ba; }
+.record-item small { display: block; max-width: 300px; overflow: hidden; margin-top: 5px; color: #8b9890; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.empty-state { margin: 0; color: #819087; font-size: 13px; }
+
+@media (max-width: 800px) {
+  .nutrition-insights-page { padding: 24px 18px; }
+  .nutrition-insights-header { align-items: start; flex-direction: column; }
+  .nutrition-insights-header h1 { font-size: 30px; }
+  .insights-metrics { grid-template-columns: repeat(2, 1fr); }
+  .insights-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .insights-metrics,
+  .record-grid { grid-template-columns: 1fr; }
+  .insight-metric strong { font-size: 25px; }
+}

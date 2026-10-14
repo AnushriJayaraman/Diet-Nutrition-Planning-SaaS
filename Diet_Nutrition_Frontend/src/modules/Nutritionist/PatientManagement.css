@@ -1,0 +1,194 @@
+.nutrition-patient-page {
+  min-height: calc(100vh - 76px);
+  background: linear-gradient(135deg, #eef8ee, #f8fbf6);
+  padding: 40px;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+.nutrition-patient-header {
+  max-width: 1000px;
+  margin: 0 auto 25px;
+}
+
+.nutrition-patient-header span {
+  color: #4b8f52;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.nutrition-patient-header h1 {
+  color: #245c28;
+  margin: 8px 0;
+  font-size: 32px;
+}
+
+.nutrition-patient-header p {
+  color: #687268;
+  margin: 0;
+}
+
+.nutrition-patient-card {
+  max-width: 750px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #e1eee1;
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.08);
+}
+
+.nutrition-patient-card h2 {
+  color: #2e7d32;
+  margin-top: 0;
+}
+
+.nutrition-patient-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.nutrition-patient-card label {
+  color: #374137;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.nutrition-patient-card input,
+.nutrition-patient-card textarea {
+  width: 100%;
+  margin-top: 7px;
+  padding: 12px;
+  border: 1px solid #ccd9cc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+  font-family: var(--font-family);
+}
+
+.nutrition-patient-card textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.nutrition-patient-card input:focus,
+.nutrition-patient-card textarea:focus {
+  border-color: #4caf50;
+}
+
+.nutrition-patient-card button {
+  margin-top: 22px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nutrition-patient-card button:hover {
+  background: #388e3c;
+}
+
+.nutrition-patient-table-wrap {
+  overflow-x: auto;
+}
+
+.nutrition-patient-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.nutrition-patient-table-wrap th,
+.nutrition-patient-table-wrap td {
+  padding: 10px;
+  border-bottom: 1px solid #e7eee7;
+  vertical-align: top;
+}
+
+.nutrition-patient-modal-backdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  overflow-y: auto;
+  background: rgba(26, 44, 29, 0.48);
+}
+
+.nutrition-patient-modal {
+  width: min(100%, 1000px);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 26px;
+  border-radius: 16px;
+  background: white;
+}
+
+.nutrition-patient-modal > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nutrition-patient-modal > header span {
+  color: #4b8f52;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.nutrition-patient-modal > header h2,
+.nutrition-patient-modal h3 {
+  color: #245c28;
+}
+
+.nutrition-patient-modal > header button {
+  align-self: flex-start;
+  margin: 0;
+}
+
+.nutrition-patient-modal section {
+  margin-top: 20px;
+}
+
+.nutrition-patient-profile {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px 20px;
+}
+
+.nutrition-patient-profile div {
+  padding: 10px;
+  background: #f7faf6;
+}
+
+.nutrition-patient-profile dt {
+  color: #687268;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.nutrition-patient-profile dd {
+  margin: 5px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.nutrition-patient-message {
+  color: #2e7d32;
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+@media (max-width: 700px) {
+  .nutrition-patient-page {
+    padding: 20px;
+  }
+}
