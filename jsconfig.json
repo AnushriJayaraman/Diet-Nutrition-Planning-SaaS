@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "target": "ES2022",
+    "noEmit": true
+  },
+  "include": [
+    "Diet_Nutrition_Frontend/src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/node_modules/**",
+    "Diet_Nutrition_Backend/target/**",
+    "Diet_Nutrition_Frontend/dist/**"
+  ]
+}

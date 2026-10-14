@@ -1,0 +1,23 @@
+node_modules/
+**/node_modules/
+**/target/
+**/dist/
+.vite/
+
+# Local secrets and environment configuration
+.env
+.env.*
+!.env.example
+**/application-secrets.properties
+*.pem
+*.key
+*.p12
+*.jks
+
+# Local application data may contain account credentials and patient records
+/Diet_Nutrition_Backend/data/
+
+# Logs and operating system files
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,13 @@
+{
+  "name": "diet-nutrition-saas",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"cd Diet_Nutrition_Backend && .\\mvnw.cmd spring-boot:run -Dspring-boot.run.profiles=local\" \"cd Diet_Nutrition_Frontend && npm run dev -- --host 0.0.0.0\"",
+    "backend": "cd Diet_Nutrition_Backend && .\\mvnw.cmd spring-boot:run -Dspring-boot.run.profiles=local",
+    "frontend": "cd Diet_Nutrition_Frontend && npm run dev -- --host 0.0.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
