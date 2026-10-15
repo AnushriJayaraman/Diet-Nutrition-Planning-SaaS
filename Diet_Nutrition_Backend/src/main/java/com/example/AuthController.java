@@ -1,12 +1,7 @@
 package com.example;
 
-import java.security.MessageDigest;
-import java.security.SecureRandom;
-import java.util.Base64;
 import java.util.Locale;
 import java.util.Map;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,23 +19,24 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "${app.cors.allowed-origin:*}")
 public class AuthController {
 
-    private static final int PASSWORD_HASH_ITERATIONS = 120_000;
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
     private final AccountRepository accountRepository;
     private final OtpVerificationService otpVerificationService;
     private final AuthTokenService authTokenService;
-    private final SecureRandom secureRandom = new SecureRandom();
+    private final PasswordHashService passwordHashService;
 
     @Autowired
     public AuthController(
         AccountRepository accountRepository,
         OtpVerificationService otpVerificationService,
-        AuthTokenService authTokenService
+        AuthTokenService authTokenService,
+        PasswordHashService passwordHashService
     ) {
         this.accountRepository = accountRepository;
         this.otpVerificationService = otpVerificationService;
         this.authTokenService = authTokenService;
+        this.passwordHashService = passwordHashService;
     }
 
     @PostMapping({"/signup", "/signup/otp"})
@@ -78,7 +74,7 @@ public class AuthController {
             String maskedDestination = otpVerificationService.start(new PendingSignupData(
                 request.name().trim(),
                 normalizedEmail,
-                hashPassword(request.password()),
+                passwordHashService.hash(request.password()),
                 role
             ));
             return ResponseEntity.ok(Map.of(
@@ -158,7 +154,7 @@ public class AuthController {
         AccountEntity user = accountRepository.findByEmail(normalizedEmail).orElse(null);
 
         if (user == null
-            || !passwordMatches(request.password(), user.getPasswordHash())
+            || !passwordHashService.matches(request.password(), user.getPasswordHash())
             || !requestedRole.equals(user.getRole())) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                 .body(Map.of("message", "Invalid email or password"));
@@ -200,7 +196,7 @@ public class AuthController {
         if (request == null || isBlank(request.currentPassword()) || isBlank(request.newPassword())) {
             return ResponseEntity.badRequest().body(Map.of("message", "Current and new passwords are required"));
         }
-        if (!passwordMatches(request.currentPassword(), user.getPasswordHash())) {
+        if (!passwordHashService.matches(request.currentPassword(), user.getPasswordHash())) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN)
                 .body(Map.of("message", "Current password is incorrect"));
         }
@@ -210,7 +206,7 @@ public class AuthController {
                 "Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number and one special character."
             ));
         }
-        user.setPasswordHash(hashPassword(request.newPassword()));
+        user.setPasswordHash(passwordHashService.hash(request.newPassword()));
         accountRepository.save(user);
         return ResponseEntity.ok(Map.of("message", "Password changed successfully"));
     }
@@ -267,7 +263,7 @@ public class AuthController {
             return ResponseEntity.badRequest().body(Map.of("message", exception.getMessage()));
         }
 
-        user.setPasswordHash(hashPassword(request.newPassword()));
+        user.setPasswordHash(passwordHashService.hash(request.newPassword()));
         accountRepository.save(user);
 
         return ResponseEntity.ok(Map.of("message", "Password reset successfully. You can now sign in."));
@@ -282,7 +278,7 @@ public class AuthController {
         String normalizedEmail = normalizeEmail(request.email());
         AccountEntity user = accountRepository.findByEmail(normalizedEmail).orElse(null);
 
-        if (user == null || !passwordMatches(request.password(), user.getPasswordHash())) {
+        if (user == null || !passwordHashService.matches(request.password(), user.getPasswordHash())) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                 .body(Map.of("message", "Invalid admin ID or password"));
         }
@@ -335,48 +331,6 @@ public class AuthController {
         );
     }
 
-    private String hashPassword(String password) {
-        byte[] salt = new byte[16];
-        secureRandom.nextBytes(salt);
-        byte[] hash = derivePasswordHash(password, salt, PASSWORD_HASH_ITERATIONS);
-        return "pbkdf2$" + PASSWORD_HASH_ITERATIONS + "$"
-            + Base64.getEncoder().encodeToString(salt) + "$"
-            + Base64.getEncoder().encodeToString(hash);
-    }
-
-    private boolean passwordMatches(String password, String storedHash) {
-        if (storedHash == null || !storedHash.startsWith("pbkdf2$")) {
-            return false;
-        }
-
-        String[] parts = storedHash.split("\\$");
-        if (parts.length != 4) {
-            return false;
-        }
-
-        try {
-            int iterations = Integer.parseInt(parts[1]);
-            byte[] salt = Base64.getDecoder().decode(parts[2]);
-            byte[] expectedHash = Base64.getDecoder().decode(parts[3]);
-            byte[] actualHash = derivePasswordHash(password, salt, iterations);
-            return MessageDigest.isEqual(expectedHash, actualHash);
-        } catch (IllegalArgumentException exception) {
-            return false;
-        }
-    }
-
-    private byte[] derivePasswordHash(String password, byte[] salt, int iterations) {
-        PBEKeySpec spec = new PBEKeySpec(password.toCharArray(), salt, iterations, 256);
-        try {
-            return SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256")
-                .generateSecret(spec)
-                .getEncoded();
-        } catch (Exception exception) {
-            throw new IllegalStateException("Unable to hash account password", exception);
-        } finally {
-            spec.clearPassword();
-        }
-    }
 }
 
 record SignupOtpRequest(

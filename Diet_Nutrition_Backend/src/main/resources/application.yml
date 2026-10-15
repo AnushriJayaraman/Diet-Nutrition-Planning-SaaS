@@ -23,6 +23,11 @@ app:
     allowed-origin: ${APP_CORS_ALLOWED_ORIGIN:*}
   auth:
     token-secret: ${APP_AUTH_TOKEN_SECRET:}
+    bootstrap-admin:
+      email: ${APP_AUTH_BOOTSTRAP_ADMIN_EMAIL:}
+      password: ${APP_AUTH_BOOTSTRAP_ADMIN_PASSWORD:}
+      name: ${APP_AUTH_BOOTSTRAP_ADMIN_NAME:Administrator}
+      reset-password: ${APP_AUTH_BOOTSTRAP_ADMIN_RESET_PASSWORD:false}
 
 brevo:
   api-key: ${BREVO_API_KEY:}
