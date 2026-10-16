@@ -302,6 +302,7 @@ public class ModuleService {
             return entity;
         }).toList();
         availability.deleteAllByNutritionistEmail(normalizedEmail);
+        availability.flush();
         return availability.saveAll(updated).stream().map(ModuleService::map).toList();
     }
 

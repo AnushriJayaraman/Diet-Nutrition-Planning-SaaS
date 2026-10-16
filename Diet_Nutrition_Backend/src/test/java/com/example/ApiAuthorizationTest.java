@@ -622,17 +622,31 @@ class ApiAuthorizationTest {
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.availability[0].startTime").value("09:00"));
 
+        mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put(
+                    "/api/nutritionist/availability")
+                .header("Authorization", bearer(nutritionistEmail, "nutritionist"))
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(Map.of("availability", java.util.List.of(Map.of(
+                    "dayOfWeek", appointmentDate.getDayOfWeek().getValue(),
+                    "startTime", "10:00",
+                    "endTime", "11:00",
+                    "active", true
+                ))))))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.availability[0].startTime").value("10:00"));
+
         mockMvc.perform(get("/api/nutritionist/availability")
                 .header("Authorization", bearer(nutritionistEmail, "nutritionist")))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$.availability[0].dayOfWeek").value(appointmentDate.getDayOfWeek().getValue()));
+            .andExpect(jsonPath("$.availability[0].dayOfWeek").value(appointmentDate.getDayOfWeek().getValue()))
+            .andExpect(jsonPath("$.availability[0].startTime").value("10:00"));
 
         mockMvc.perform(get("/api/appointment-slots")
                 .param("nutritionistEmail", nutritionistEmail)
                 .param("date", appointmentDate.toString())
                 .header("Authorization", bearer(patientEmail, "patient")))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$.slots[0]").value(appointmentDate + "T09:00"));
+            .andExpect(jsonPath("$.slots[0]").value(appointmentDate + "T10:00"));
 
         mockMvc.perform(post("/api/patient-profile")
                 .header("Authorization", bearer(patientEmail, "patient"))
